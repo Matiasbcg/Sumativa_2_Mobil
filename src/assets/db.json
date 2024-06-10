@@ -1,0 +1,29 @@
+{
+    "database": "Appmoviles",
+    "version": 1,
+    "encrypted": false,
+    "mode": "full",
+    "tables": [
+        {
+            "name": "Usuario",
+            "schema": [
+                {
+                    "column": "id",
+                    "value": "INTEGER PRIMARY KEY"
+                },
+                {
+                    "column": "nombre",
+                    "value": "TEXT NOT NULL"
+                },
+                {
+                    "column": "contrasena",
+                    "value": "TEXT NOT NULL"
+                },
+                {
+                    "column": "estadoConexion",
+                    "value": "INTEGER NOT NULL DEFAULT 0"
+                }
+            ]
+        }
+    ]
+}

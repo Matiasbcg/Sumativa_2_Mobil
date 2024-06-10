@@ -1,0 +1,53 @@
+.certificado-item {
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0; 
+}
+
+.certificado-item ion-label {
+  display: block; 
+  font-weight: bold;
+  font-size: 10px; 
+  text-align: left; 
+}
+
+.certificado-item ion-label:nth-child(2),
+.certificado-item ion-label:nth-child(3) {
+  margin-top: 10px; 
+}
+
+.certificado-item ion-label:last-child {
+  margin-bottom: 10px; 
+}
+
+.titulo {
+  margin-left: 15px; 
+}
+
+.experiencias-list {
+  padding: 20px;
+}
+
+.experiencia-item {
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0; 
+}
+
+.experiencia-item ion-label {
+  display: block; 
+  font-weight: bold;
+  font-size: 10px; 
+  text-align: left; 
+}
+
+.experiencia-item ion-label:nth-child(2),
+.experiencia-item ion-label:nth-child(3) {
+  margin-top: 10px;
+}
+
+.experiencia-item ion-label:last-child {
+  margin-bottom: 10px;
+}
+
+.titulo {
+  margin-left: 15px;
+}

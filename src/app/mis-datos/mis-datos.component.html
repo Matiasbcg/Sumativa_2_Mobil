@@ -1,0 +1,33 @@
+<h2 class="titulo">Mis Certificados</h2> 
+<ion-list class="certificados-list">
+  <ion-item class="certificado-item" *ngFor="let certificado of certificados">
+    <ion-label>{{ certificado.nombre }}</ion-label>
+    <ion-label>{{ certificado.fechaObtencion }}</ion-label>
+    <ion-label>
+      <ion-label *ngIf="certificado.conVencimiento">Con</ion-label>
+      <ion-label *ngIf="certificado.conVencimiento">Vencimiento</ion-label>
+      <ion-label *ngIf="!certificado.conVencimiento">
+        <br /> 
+        Sin <br /> Vencimiento 
+      </ion-label>
+    </ion-label>
+    <ion-label *ngIf="certificado.conVencimiento">{{ certificado.fechaVencimiento }}</ion-label>
+  </ion-item>
+</ion-list>
+
+<h2 class="titulo">Mis Experiencias Laborales</h2>
+<ion-list class="experiencias-list">
+  <ion-item class="experiencia-item" *ngFor="let experiencia of experiencias">
+    <ion-label>{{ experiencia.empresa }}</ion-label>
+    <ion-label>{{ experiencia.anoInicio }}</ion-label>
+    <ion-label *ngIf="!experiencia.actualmenteTrabajando">{{ experiencia.anoTermino }}</ion-label>
+    <ion-label>{{ experiencia.cargo }}</ion-label>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+{
+  "name": "SkeletonAPPNavegaciónII",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
