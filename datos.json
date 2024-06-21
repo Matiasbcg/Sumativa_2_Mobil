@@ -1,0 +1,40 @@
+{
+  "doctores": [
+    {
+      "id": "1",
+      "nombre": "Dr. Juan Pérez",
+      "universidad": "Universidad Nacional Autónoma de México",
+      "especialidad": "Cardiología",
+      "foto": "assets/img/doctores/juan_perez.jpeg"
+    },
+    {
+      "id": "2",
+      "nombre": "Dra. María López",
+      "universidad": "Universidad de Buenos Aires",
+      "especialidad": "Neurología",
+      "foto": "assets/img/doctores/maria_lopez.jpeg"
+    },
+    {
+      "id": "3",
+      "nombre": "Dr. Carlos González",
+      "universidad": "Universidad de Chile",
+      "especialidad": "Pediatría",
+      "foto": "assets/img/doctores/carlos_gonzalez.jpeg"
+    }
+  ],
+  "reseñas": [
+    {
+      "id": "2",
+      "doctorId": "2",
+      "usuario": "Usuario2",
+      "valoracion": 6,
+      "comentario": "Buen servicio, pero las instalaciones podrían mejorar."
+    },
+    {
+      "id": "1718829809035",
+      "usuario": "matias",
+      "valoracion": 10,
+      "comentario": "aaa"
+    }
+  ]
+}

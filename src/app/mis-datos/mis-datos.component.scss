@@ -1,53 +1,52 @@
-.certificado-item {
-  border-bottom: 1px solid #ccc;
-  padding: 15px 0; 
-}
-
-.certificado-item ion-label {
-  display: block; 
-  font-weight: bold;
-  font-size: 10px; 
-  text-align: left; 
-}
-
-.certificado-item ion-label:nth-child(2),
-.certificado-item ion-label:nth-child(3) {
-  margin-top: 10px; 
-}
-
-.certificado-item ion-label:last-child {
-  margin-bottom: 10px; 
-}
-
-.titulo {
-  margin-left: 15px; 
-}
-
-.experiencias-list {
+.container {
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
+  
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.experiencia-item {
-  border-bottom: 1px solid #ccc;
-  padding: 15px 0; 
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.experiencia-item ion-label {
-  display: block; 
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
   font-weight: bold;
-  font-size: 10px; 
-  text-align: left; 
 }
 
-.experiencia-item ion-label:nth-child(2),
-.experiencia-item ion-label:nth-child(3) {
+.form-control {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
   margin-top: 10px;
 }
 
-.experiencia-item ion-label:last-child {
-  margin-bottom: 10px;
+.img-thumbnail {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
 }
 
-.titulo {
-  margin-left: 15px;
+.ion-padding {
+  padding: 15px;
 }
+
+.mt-3 {
+  margin-top: 20px;
+}
+

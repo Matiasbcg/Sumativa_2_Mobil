@@ -1,29 +1,51 @@
-<h2 class="titulo">Mis Certificados</h2> 
-<ion-list class="certificados-list">
-  <ion-item class="certificado-item" *ngFor="let certificado of certificados">
-    <ion-label>{{ certificado.nombre }}</ion-label>
-    <ion-label>{{ certificado.fechaObtencion }}</ion-label>
-    <ion-label>
-      <ion-label *ngIf="certificado.conVencimiento">Con</ion-label>
-      <ion-label *ngIf="certificado.conVencimiento">Vencimiento</ion-label>
-      <ion-label *ngIf="!certificado.conVencimiento">
-        <br /> 
-        Sin <br /> Vencimiento 
-      </ion-label>
-    </ion-label>
-    <ion-label *ngIf="certificado.conVencimiento">{{ certificado.fechaVencimiento }}</ion-label>
-  </ion-item>
-</ion-list>
+<div class="container">
+  <h1>Datos del Hijo</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">Primer Nombre:</label>
+      <input type="text" id="firstName" class="form-control" [(ngModel)]="user.firstName" name="firstName" required>
+    </div>
+    <div class="form-group">
+      <label for="secondName">Segundo Nombre:</label>
+      <input type="text" id="secondName" class="form-control" [(ngModel)]="user.secondName" name="secondName">
+    </div>
+    <div class="form-group">
+      <label for="firstSurname">Primer Apellido:</label>
+      <input type="text" id="firstSurname" class="form-control" [(ngModel)]="user.firstSurname" name="firstSurname" required>
+    </div>
+    <div class="form-group">
+      <label for="secondSurname">Segundo Apellido:</label>
+      <input type="text" id="secondSurname" class="form-control" [(ngModel)]="user.secondSurname" name="secondSurname">
+    </div>
+    <div class="form-group">
+      <label for="birthDate">Fecha de Nacimiento:</label>
+      <input type="date" id="birthDate" class="form-control" [(ngModel)]="user.birthDate" name="birthDate" required>
+    </div>
+    <div class="form-group">
+      <label for="school">Colegio:</label>
+      <input type="text" id="school" class="form-control" [(ngModel)]="user.school" name="school" required>
+    </div>
+    <div class="form-group">
+      <label for="photo">Foto de Perfil:</label>
+      <button type="button" class="btn btn-primary" (click)="takePhoto()">Tomar Foto</button>
+      <div *ngIf="photo">
+        <img [src]="photo" alt="Foto de Perfil" class="img-thumbnail mt-2">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+  </form>
+  <div class="ion-padding mt-3">
+    <button class="btn btn-info" (click)="verDetalleHijo()">Ver hijos registrados</button>
+  </div>
+</div>
 
-<h2 class="titulo">Mis Experiencias Laborales</h2>
-<ion-list class="experiencias-list">
-  <ion-item class="experiencia-item" *ngFor="let experiencia of experiencias">
-    <ion-label>{{ experiencia.empresa }}</ion-label>
-    <ion-label>{{ experiencia.anoInicio }}</ion-label>
-    <ion-label *ngIf="!experiencia.actualmenteTrabajando">{{ experiencia.anoTermino }}</ion-label>
-    <ion-label>{{ experiencia.cargo }}</ion-label>
-  </ion-item>
-</ion-list>
+
+
+
+
+
+
+
 
 
 

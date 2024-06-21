@@ -1,0 +1,75 @@
+<div class="container">
+    <h2>Reseñas</h2>
+  
+    <!-- Formulario para agregar una nueva reseña -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h3 class="card-title">Agregar Reseña</h3>
+        <form (ngSubmit)="agregarResena()" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="inputUsuario">Usuario:</label>
+            <input type="text" class="form-control" id="inputUsuario" [(ngModel)]="nuevaResena.usuario" name="usuario" readonly required>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputValoracion">Valoración (1-10):</label>
+              <input type="number" class="form-control" id="inputValoracion" [(ngModel)]="nuevaResena.valoracion" name="valoracion" min="1" max="10" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputComentario">Comentario:</label>
+            <textarea class="form-control" id="inputComentario" [(ngModel)]="nuevaResena.comentario" name="comentario" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
+      </div>
+    </div>
+  
+<!-- Lista de reseñas -->
+<div class="card mb-4" *ngFor="let resena of resenas">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center">
+        <h3 class="card-title">{{ resena.usuario }}</h3>
+        <div>
+          <button class="btn btn-edit" (click)="editarResena(resena); scrollToEditForm()">Editar</button>
+          <button class="btn btn-delete" (click)="eliminarResena(resena.id)">Eliminar</button>
+        </div>
+      </div>
+      <p class="card-text"><strong>Valoración:</strong> {{ resena.valoracion }}</p>
+      <p class="card-text"><strong>Comentario:</strong> {{ resena.comentario }}</p>
+    </div>
+  </div>
+  
+    <!-- Formulario para editar una reseña -->
+    <div class="card mb-4" *ngIf="editandoResena" id="editForm">
+      <div class="card-body">
+        <h3 class="card-title">Editar Reseña</h3>
+        <form (ngSubmit)="guardarResenaEditada()" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="editInputUsuario">Usuario:</label>
+            <input type="text" class="form-control" id="editInputUsuario" [(ngModel)]="editandoResena.usuario" name="editUsuario" readonly required>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="editInputValoracion">Valoración (1-10):</label>
+              <input type="number" class="form-control" id="editInputValoracion" [(ngModel)]="editandoResena.valoracion" name="editValoracion" min="1" max="10" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="editInputComentario">Comentario:</label>
+            <textarea class="form-control" id="editInputComentario" [(ngModel)]="editandoResena.comentario" name="editComentario" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="button" class="btn btn-secondary ml-2" (click)="editandoResena = null">Cancelar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+

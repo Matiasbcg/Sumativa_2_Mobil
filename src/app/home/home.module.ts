@@ -5,9 +5,10 @@ import { IonicModule } from '@ionic/angular';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
-import { ExperienciaLaboralComponent } from '../experiencia-laboral/experiencia-laboral.component';
-import { CertificacionesComponent } from '../certificaciones/certificaciones.component';
+
 import { MisDatosComponent } from '../mis-datos/mis-datos.component';
+import { InformacionComponent } from '../informacion/informacion.component';
+import { ResenaComponent } from '../resena/resena.component';
 
 @NgModule({
   imports: [
@@ -18,9 +19,9 @@ import { MisDatosComponent } from '../mis-datos/mis-datos.component';
   ],
   declarations: [
     HomePage,
-    ExperienciaLaboralComponent,
-    CertificacionesComponent,
-    MisDatosComponent
+    MisDatosComponent,
+    InformacionComponent,
+    ResenaComponent
   ]
 })
 export class HomePageModule {}

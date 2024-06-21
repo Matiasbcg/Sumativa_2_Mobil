@@ -31,7 +31,7 @@ export class RegisterPage {
     if (this.username && this.password) {
       try {
         await this.dbTaskService.registerUser(this.username, this.password);
-        this.router.navigateByUrl('/home'); 
+        this.router.navigateByUrl('/home');
       } catch (error) {
         console.error('Error registering user:', error);
         this.showAlert('Error', 'Error registering user');
@@ -40,7 +40,6 @@ export class RegisterPage {
       this.showAlert('Error', 'Please fill in all fields');
     }
   }
-  
 
   async showAlert(header: string, message: string) {
     const alert = await this.alertController.create({

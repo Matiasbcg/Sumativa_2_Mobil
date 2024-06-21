@@ -26,9 +26,19 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
+    path: 'docinfo/:id',
+    loadChildren: () => import('./pages/docinfo/docinfo.module').then( m => m.DocinfoPageModule)
+  },
+  {
+    path: 'detalle-hijo',
+    loadChildren: () => import('./pages/detalle-hijo/detalle-hijo.module').then( m => m.DetalleHijoPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'not-found'
-  },
+  }
+ 
+
 ];
 
 @NgModule({

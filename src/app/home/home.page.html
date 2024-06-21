@@ -10,28 +10,30 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-  
-  <ion-content>
-    <ion-segment [(ngModel)]="selectedSegment">
-      <ion-segment-button value="experiencia">
-        <ion-label>Experiencia Laboral</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="certificaciones">
-        <ion-label>Certificaciones</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="datos">
-        <ion-label>Mis Datos</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  
-    <div *ngIf="selectedSegment === 'experiencia'">
-      <app-experiencia-laboral></app-experiencia-laboral>
-    </div>
-    <div *ngIf="selectedSegment === 'certificaciones'">
-      <app-certificaciones></app-certificaciones>
-    </div>
-    <div *ngIf="selectedSegment === 'datos'">
-      <app-mis-datos></app-mis-datos>
-    </div>
-  </ion-content>
+
+<ion-content>
+  <ion-segment [(ngModel)]="selectedSegment">
+    <ion-segment-button value="datos">
+      <ion-label>Mis Datos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="informacion">
+      <ion-label>Información</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="resena">
+      <ion-label>Reseñas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+  <div *ngIf="selectedSegment === 'datos'">
+    <app-mis-datos></app-mis-datos>
+  </div>
+  <div *ngIf="selectedSegment === 'informacion'">
+    <app-informacion></app-informacion>
+  </div>
+  <div *ngIf="selectedSegment === 'resena'">
+    <app-resena></app-resena>
+  </div>
+</ion-content>
+
   

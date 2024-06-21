@@ -95,16 +95,12 @@ export class DBTaskService {
       set: [
         {
           statement: sql,
-          values: [
-            username,
-            password,
-            1 
-          ]
+          values: [username, password, 1]
         }
       ]
     }).then((changes: capSQLiteChanges) => {
-      if (this.isWeb) {
-        CapacitorSQLite.saveToStore({ database: dbName });
+      if (changes.changes.changes > 0) {
+        this.setSession(username); // Guardar en SessionStorage
       }
       return changes;
     }).catch(err => Promise.reject(err));
@@ -114,29 +110,37 @@ export class DBTaskService {
     let selectSql = `SELECT * FROM Usuario WHERE nombre = ? AND contrasena = ?`;
     let updateSql = `UPDATE Usuario SET estadoConexion = ? WHERE nombre = ? AND contrasena = ?`;
     const dbName = await this.getDbName();
-    
+
     return CapacitorSQLite.query({
       database: dbName,
       statement: selectSql,
       values: [username, password]
     }).then(async (result: capSQLiteValues) => {
-      if (this.isWeb) {
-        await CapacitorSQLite.saveToStore({ database: dbName });
-      }
       if (result.values.length > 0) {
         await CapacitorSQLite.run({
           database: dbName,
           statement: updateSql,
           values: [1, username, password]
         });
-        if (this.isWeb) {
-          await CapacitorSQLite.saveToStore({ database: dbName });
-        }
+        this.setSession(username); // Guardar en SessionStorage
         return true;
       }
       return false;
     }).catch(err => Promise.reject(err));
   }
+
+  async setSession(username: string) {
+    sessionStorage.setItem('authenticatedUser', username);
+  }
+
+  async clearSession() {
+    sessionStorage.removeItem('authenticatedUser');
+  }
+
+  async getAuthenticatedUserstorage(): Promise<string | null> {
+    return sessionStorage.getItem('authenticatedUser');
+  }
+
 
   async updateConnectionState(state: number) {
     let sql = `UPDATE Usuario SET estadoConexion = ?`;
@@ -162,6 +166,23 @@ export class DBTaskService {
       values: []
     }).then(async (result: capSQLiteValues) => {
       return result.values.length > 0;
+    }).catch(err => Promise.reject(err));
+  }
+
+
+  async getAuthenticatedUser(): Promise<string | null> {
+    const dbName = await this.getDbName();
+    const selectSql = `SELECT * FROM Usuario WHERE estadoConexion = 1`;
+    
+    return CapacitorSQLite.query({
+      database: dbName,
+      statement: selectSql,
+      values: []
+    }).then((result: capSQLiteValues) => {
+      if (result.values.length > 0) {
+        return result.values[0].nombre; // Devuelve el nombre del primer usuario autenticado
+      }
+      return null;
     }).catch(err => Promise.reject(err));
   }
 }

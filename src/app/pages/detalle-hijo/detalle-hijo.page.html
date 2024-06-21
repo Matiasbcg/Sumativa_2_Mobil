@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Detalles de los Hijos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" *ngFor="let hijoData of userDataList">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ hijoData.firstName }} {{ hijoData.firstSurname }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label><strong>Primer Nombre:</strong></ion-label>
+              <ion-text>{{ hijoData.firstName }}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label><strong>Segundo Nombre:</strong></ion-label>
+              <ion-text>{{ hijoData.secondName }}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label><strong>Primer Apellido:</strong></ion-label>
+              <ion-text>{{ hijoData.firstSurname }}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label><strong>Segundo Apellido:</strong></ion-label>
+              <ion-text>{{ hijoData.secondSurname }}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label><strong>Fecha de Nacimiento:</strong></ion-label>
+              <ion-text>{{ hijoData.birthDate }}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-label><strong>Colegio:</strong></ion-label>
+              <ion-text>{{ hijoData.school }}</ion-text>
+            </ion-item>
+            <div *ngIf="hijoData.photo" class="photo-container">
+              <img [src]="hijoData.photo" alt="Foto de Perfil" class="img-thumbnail mt-2">
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card *ngIf="userDataList.length === 0">
+    <ion-card-header>
+      <ion-card-title>No se encontraron datos del hijo</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+
+
+
+
+
+
+
+

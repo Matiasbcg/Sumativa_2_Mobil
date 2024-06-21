@@ -1,0 +1,38 @@
+ion-header {
+    --background: #3880ff;
+    --color: #fff;
+  }
+  
+  ion-title {
+    text-align: center;
+  }
+  
+  ion-card-title {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  ion-card-content {
+    font-size: 1rem;
+  }
+  
+  ion-item {
+    margin: 5px 0;
+    border-radius: 5px;
+    --inner-padding-start: 10px;
+    --inner-padding-end: 10px;
+  }
+  
+  .photo-container {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .photo-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  

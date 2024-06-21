@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { defineCustomElements as jeepSqlite } from 'jeep-sqlite/loader'
 import { HttpClientModule } from '@angular/common/http';
+
 jeepSqlite(window)
 
 @NgModule({

@@ -1,0 +1,51 @@
+<ion-card class="custom-card">
+  <img alt="Silhouette of mountains" src="https://www.hola.com/images/027f-179ba38a9ab8-c668a77fed6f-1000/horizontal-1200/acudir-a-un-psiquiatra-infantil.jpg" />
+  <ion-card-header>
+    <ion-card-title>Bienvenido a nuestra comunidad</ion-card-title>
+    <ion-card-subtitle>Descubre cómo podemos ayudarte</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    ¿Buscas un espacio seguro y profesional para el bienestar de tu hijo/a? ¡Has llegado al lugar correcto! En nuestra comunidad, nos especializamos en el cuidado psiquiátrico infantil, brindando apoyo emocional y terapias adaptadas a las necesidades de cada niño/a. ¡Únete a nosotros y comienza el viaje hacia una vida más feliz y equilibrada para tu familia!
+  </ion-card-content>
+</ion-card>
+
+<ion-card class="custom-card">
+  <img alt="Silhouette of mountains" src="https://lh3.googleusercontent.com/p/AF1QipOKnt86QuRyeVOXLWLDu3w4678-BhIAUbloidTP=s680-w680-h510" />
+  <ion-card-header>
+    <ion-card-title>Sesiones 100% Presenciales</ion-card-title>
+    <ion-card-subtitle>¿Dónde encontrarnos?</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    Av. Luis Thayer Ojeda 166, Oficina 301, 7510017 Providencia, Región Metropolitana
+  </ion-card-content>
+  <ion-button fill="clear" href="https://www.google.com/maps/place/FLMEDICA/@-33.4730145,-70.7525184,12z/data=!4m9!1m2!2m1!1spsiquiatra+infantil+chile!3m5!1s0x9662cf593e860c25:0x12fc8204e3c91715!8m2!3d-33.4199314!4d-70.6019279!16s%2Fg%2F11t7l445p5?entry=ttu">Ver en Maps</ion-button>
+</ion-card>
+
+
+<h2 class="titulo">Información de Doctores</h2>
+
+<ion-list class="doctores-list">
+  <ion-item class="doctor-item" *ngFor="let doctor of doctores">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="doctor.foto"></ion-img>
+    </ion-thumbnail>
+    <ion-label>
+      <h2>{{ doctor.nombre }}</h2>
+      <p>Especialidad: {{ doctor.especialidad }}</p>
+      <p>Universidad: {{ doctor.universidad }}</p>
+    </ion-label>
+    <ion-button expand="block" color="primary" [routerLink]="['/docinfo', doctor.id]">Ver Info</ion-button>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,7 +8,7 @@ import { DBTaskService } from '../services/dbtask.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
-  selectedSegment: string = 'experiencia';
+  selectedSegment: string = 'informacion';
   constructor(
     private router: Router, 
     private dbTaskService: DBTaskService
@@ -26,5 +26,7 @@ export class HomePage {
     }
   }
 }
+
+
 
 
