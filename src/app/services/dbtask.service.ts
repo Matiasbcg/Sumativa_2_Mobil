@@ -100,7 +100,7 @@ export class DBTaskService {
       ]
     }).then((changes: capSQLiteChanges) => {
       if (changes.changes.changes > 0) {
-        this.setSession(username); // Guardar en SessionStorage
+        this.setSession(username); 
       }
       return changes;
     }).catch(err => Promise.reject(err));
@@ -122,7 +122,7 @@ export class DBTaskService {
           statement: updateSql,
           values: [1, username, password]
         });
-        this.setSession(username); // Guardar en SessionStorage
+        this.setSession(username); 
         return true;
       }
       return false;
@@ -180,7 +180,7 @@ export class DBTaskService {
       values: []
     }).then((result: capSQLiteValues) => {
       if (result.values.length > 0) {
-        return result.values[0].nombre; // Devuelve el nombre del primer usuario autenticado
+        return result.values[0].nombre; 
       }
       return null;
     }).catch(err => Promise.reject(err));

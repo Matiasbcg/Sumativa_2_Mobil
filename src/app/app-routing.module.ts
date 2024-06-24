@@ -27,11 +27,11 @@ const routes: Routes = [
   },
   {
     path: 'docinfo/:id',
-    loadChildren: () => import('./pages/docinfo/docinfo.module').then( m => m.DocinfoPageModule)
+    loadChildren: () => import('./pages/docinfo/docinfo.module').then( m => m.DocinfoPageModule),canActivate: [AuthGuard]
   },
   {
     path: 'detalle-hijo',
-    loadChildren: () => import('./pages/detalle-hijo/detalle-hijo.module').then( m => m.DetalleHijoPageModule)
+    loadChildren: () => import('./pages/detalle-hijo/detalle-hijo.module').then( m => m.DetalleHijoPageModule),canActivate: [AuthGuard]
   },
   {
     path: '**',

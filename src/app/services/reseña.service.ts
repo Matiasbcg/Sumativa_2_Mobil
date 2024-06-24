@@ -15,7 +15,7 @@ export interface Resena {
   providedIn: 'root'
 })
 export class ResenaService {
-  private apiUrl = 'http://localhost:3000/reseñas'; // Ajusta la URL según tu configuración
+  private apiUrl = 'http://localhost:3000/reseñas'; 
 
   constructor(private http: HttpClient) {}
 

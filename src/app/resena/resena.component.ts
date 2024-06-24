@@ -42,9 +42,9 @@ export class ResenaComponent implements OnInit {
     if (this.authenticatedUser) {
       this.nuevaResena.usuario = this.authenticatedUser;
   
-      // Generar un id único si no se proporciona
+      
       if (!this.nuevaResena.id) {
-        this.nuevaResena.id = this.generateUniqueId(); // Función para generar un id único
+        this.nuevaResena.id = this.generateUniqueId(); 
       }
   
       this.resenaService.agregarResena(this.nuevaResena).subscribe(
@@ -60,16 +60,16 @@ export class ResenaComponent implements OnInit {
   }
   
   generateUniqueId(): string {
-    // Generar un id único basado en la fecha actual y algún otro criterio si es necesario
+    
     return Date.now().toString();
   }
 
   editarResena(resena: Resena) {
     if (this.authenticatedUser === resena.usuario) {
       this.editandoResena = { ...resena };
-      this.scrollToEditForm(); // Si deseas desplazarte automáticamente al formulario de edición
+      this.scrollToEditForm(); 
     } else {
-      // Aquí puedes mostrar un mensaje de error o realizar alguna acción según tu lógica de usuario no autorizado
+      
       console.log('No estás autorizado para editar esta reseña.');
     }
   }
@@ -103,7 +103,7 @@ export class ResenaComponent implements OnInit {
         }
       );
     } else {
-      // Aquí puedes mostrar un mensaje de error o realizar alguna acción según tu lógica de usuario no autorizado
+      
       console.log('No estás autorizado para eliminar esta reseña.');
     }
   }

@@ -2,39 +2,52 @@
   "doctores": [
     {
       "id": "1",
-      "nombre": "Dr. Juan Pérez",
-      "universidad": "Universidad Nacional Autónoma de México",
-      "especialidad": "Cardiología",
-      "foto": "assets/img/doctores/juan_perez.jpeg"
+      "nombre": "Dr. Mateo González",
+      "universidad": "Universidad Diego Portales",
+      "especialidad": "Psiquiatría de adultos o general",
+      "foto": "assets/img/doctores/Psiquiatra1.jpeg"
     },
     {
       "id": "2",
-      "nombre": "Dra. María López",
-      "universidad": "Universidad de Buenos Aires",
-      "especialidad": "Neurología",
-      "foto": "assets/img/doctores/maria_lopez.jpeg"
+      "nombre": "Dra. Valentina Muñoz",
+      "universidad": "Universidad San Sebastián",
+      "especialidad": "Psiquiatría infanto-juvenil",
+      "foto": "assets/img/doctores/Psiquiatra2.jpeg"
     },
     {
       "id": "3",
-      "nombre": "Dr. Carlos González",
-      "universidad": "Universidad de Chile",
-      "especialidad": "Pediatría",
-      "foto": "assets/img/doctores/carlos_gonzalez.jpeg"
+      "nombre": "Dr. Rodrigo Rojas",
+      "universidad": "Universidad del Desarrollo",
+      "especialidad": "Psiquiatría geriátrica",
+      "foto": "assets/img/doctores/Psiquiatra3.jpeg"
+    },
+    {
+      "id": "4",
+      "nombre": "Dr. Pablo Díaz",
+      "universidad": "Universidad Católica del Maule",
+      "especialidad": "Psiquiatra de las adicciones",
+      "foto": "assets/img/doctores/Psiquiatra4.jpeg"
+    },
+    {
+      "id": "5",
+      "nombre": "Dra. Paula Pérez",
+      "universidad": "Universidad Autónoma de Chile",
+      "especialidad": "Neuropsiquiatría",
+      "foto": "assets/img/doctores/Psiquiatra5.jpeg"
     }
   ],
   "reseñas": [
     {
       "id": "2",
-      "doctorId": "2",
-      "usuario": "Usuario2",
+      "usuario": "Catalina_023",
       "valoracion": 6,
       "comentario": "Buen servicio, pero las instalaciones podrían mejorar."
     },
     {
-      "id": "1718829809035",
-      "usuario": "matias",
+      "id": "1719159923417",
+      "usuario": "Pedro_023",
       "valoracion": 10,
-      "comentario": "aaa"
+      "comentario": "Buena atencion y excelente ubicacion"
     }
   ]
 }
