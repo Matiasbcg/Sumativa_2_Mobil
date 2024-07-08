@@ -1,16 +1,22 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ResenaService } from './reseña.service';
 
-import { ReseñaService } from './reseña.service';
-
-describe('ReseñaService', () => {
-  let service: ReseñaService;
+describe('ResenaService', () => {
+  let service: ResenaService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ReseñaService);
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule], 
+      providers: [ResenaService]
+    });
+    service = TestBed.inject(ResenaService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+ 
 });
+

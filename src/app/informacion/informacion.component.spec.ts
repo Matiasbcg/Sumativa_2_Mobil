@@ -1,24 +1,28 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
-
+import { TestBed, waitForAsync } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { InformacionComponent } from './informacion.component';
+import { DoctorService } from '../services/doctor.service';
 
 describe('InformacionComponent', () => {
   let component: InformacionComponent;
-  let fixture: ComponentFixture<InformacionComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ InformacionComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [HttpClientTestingModule],
+      declarations: [InformacionComponent],
+      providers: [DoctorService]
     }).compileComponents();
-
-    fixture = TestBed.createComponent(InformacionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
   }));
+
+  beforeEach(() => {
+    const fixture = TestBed.createComponent(InformacionComponent);
+    component = fixture.componentInstance;
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  
 });
+

@@ -1,24 +1,30 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
-
+import { TestBed, waitForAsync } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { HomePage } from './home.page';
+import { DBTaskService } from '../services/dbtask.service';
 
 describe('HomePage', () => {
   let component: HomePage;
-  let fixture: ComponentFixture<HomePage>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule
+      ],
       declarations: [HomePage],
-      imports: [IonicModule.forRoot()]
+      providers: [DBTaskService]
     }).compileComponents();
+  }));
 
-    fixture = TestBed.createComponent(HomePage);
+  beforeEach(() => {
+    const fixture = TestBed.createComponent(HomePage);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
+

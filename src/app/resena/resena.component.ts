@@ -2,6 +2,13 @@ import { Component, OnInit, ElementRef  } from '@angular/core';
 import { ResenaService, Resena } from '../services/reseña.service';
 import { DBTaskService } from '../services/dbtask.service';
 
+export interface Resenaa {
+  id: string;
+  usuario: string;
+  valoracion: number;
+  comentario: string;
+}
+
 @Component({
   selector: 'app-resena',
   templateUrl: './resena.component.html',

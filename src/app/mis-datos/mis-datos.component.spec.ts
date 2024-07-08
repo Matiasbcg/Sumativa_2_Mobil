@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MisDatosComponent } from './mis-datos.component';
+import { DBTaskService } from '../services/dbtask.service';
 
 describe('MisDatosComponent', () => {
   let component: MisDatosComponent;
@@ -9,8 +10,12 @@ describe('MisDatosComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MisDatosComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [MisDatosComponent],
+      imports: [
+        IonicModule.forRoot(),
+        HttpClientTestingModule 
+      ],
+      providers: [DBTaskService]
     }).compileComponents();
 
     fixture = TestBed.createComponent(MisDatosComponent);
@@ -21,4 +26,7 @@ describe('MisDatosComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+ 
 });
+
